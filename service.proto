@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package test;
+
+option go_package = "./proto";
+
+service TestService {
+  rpc SayHello(SayHelloRequest) returns (SayHelloResponse) {}
+  rpc SayGoodbye(SayGoodbyeRequest) returns (SayGoodbyeResponse) {}
+}
+
+message Person {
+  string name = 1;
+}
+
+message SayHelloRequest {
+  Person person = 1;
+}
+
+message SayHelloResponse {
+  string message = 1;
+}
+
+message SayGoodbyeRequest {
+  Person person = 2;
+}
+
+message SayGoodbyeResponse {
+  string message = 1;
+}
